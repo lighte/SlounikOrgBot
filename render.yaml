@@ -1,0 +1,8 @@
+services:
+  - type: worker
+    name: message-worker
+    env: python
+    region: frankfurt  # or frankfurt, singapore, etc.
+    plan: free  # or starter/pro
+    buildCommand: pip install -r requirements.txt
+    startCommand: python SlounikOrgBotServer.py

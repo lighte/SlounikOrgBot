@@ -11,8 +11,11 @@ from Cache import HtmlCache
 html_cache = HtmlCache()
 
 # Read the token from a file named "token"
-with open(os.path.join(os.path.dirname(__file__), 'token'), 'r') as f:
-    BOT_TOKEN = f.read().strip()
+# with open(os.path.join(os.path.dirname(__file__), 'token'), 'r') as f:
+#     BOT_TOKEN = f.read().strip()
+
+
+BOT_TOKEN = os.getenv("MESSAGE_SOURCE_TOKEN")
 
 # Handler for /start command
 async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
